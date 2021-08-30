@@ -1,9 +1,14 @@
 #!/bin/bash
 
+timer=60
+if [[ $1 != "" ]]; then
+	timer=$1
+fi
+
 rm -rf $(ls --ignore=*.sh)
 if [[ $1 == "clean" ]]; then
 	exit
 fi
-sudo blktrace -d /dev/nvme0n1 -o trace
+sudo blktrace -w $timer-d /dev/nvme0n1 -o trace
 
 
