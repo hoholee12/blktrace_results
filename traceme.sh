@@ -1,6 +1,6 @@
 #!/bin/bash
 
-rm -rf $(ls | grep -v traceme.sh | grep -v printme.sh)
+rm -rf $(ls --ignore=*.sh)
 if [[ $1 == "clean" ]]; then
 	exit
 fi
