@@ -10,6 +10,6 @@ elif [[ $1 == "" ]]; then
 else
 	name=$1
 fi
-sudo blktrace -d /dev/nvme0n1 -o $name
+sudo blktrace -d /dev/sdb -o $name
 
 

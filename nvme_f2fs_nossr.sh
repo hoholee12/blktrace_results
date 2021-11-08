@@ -4,7 +4,8 @@
 
 #mnt
 umount ~/mnt 2>/dev/null
-mkfs.f2fs /dev/nvme0n1p1 -f -o 5
+sleep 1
+mkfs.f2fs /dev/nvme0n1p1 -f
 mount -t f2fs /dev/nvme0n1p1 ~/mnt -o mode=lfs
 chown jeongho:jeongho ~/mnt
 
